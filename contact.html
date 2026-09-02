@@ -858,22 +858,52 @@ body {
 
     let selectedRating = 0;
 
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+    contactForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
 
-      const formData = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        email: document.getElementById("email").value,
-        course: document.getElementById("course").value,
-        message: document.getElementById("message").value
-      };
+  const formData = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    course: document.getElementById("course").value,
+    message: document.getElementById("message").value
+  };
 
-      console.log("Contact Form Data:", formData);
+  try {
+    const response = await fetch("https://talk-smart-backend.vercel.app//api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      })
+    });
+
+    const result = await response.json();
+
+    console.log("Backend Response:", result);
+
+    if (result.success) {
+      // Reset contact form
       contactForm.reset();
+
+      // Open your existing feedback popup
       feedbackModal.classList.add("show");
       document.body.style.overflow = "hidden";
-    });
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+
+  } catch (error) {
+    console.error("Error submitting contact form:", error);
+    alert("Unable to connect to the server.");
+  }
+});
+
+
 
     ratingStars.forEach((star) => {
       star.addEventListener("click", () => {
