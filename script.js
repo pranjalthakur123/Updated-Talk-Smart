@@ -20,13 +20,21 @@ const courseData = {
     level: "Level 01",
     title: "Basic English",
     description:
-      "Perfect for beginners who want to build a strong foundation and become comfortable using English in everyday situations.",
+      "Basic course is essentially meant for those students who are new to English Language. Though they may have studied in public schools, they have poor knowledge of grammar. These students often suffer from some fundamental problems and form sentences with incorrect tenses, or have a weak vocabulary.",
     topics: [
-      "Basic grammar",
-      "Everyday vocabulary",
-      "Greetings and introductions",
-      "Daily conversations",
-      "Speaking confidence"
+      "Improve accuracy in Grammar",
+
+      "Expand vocabulary",
+
+      "Develop reading skills",
+
+      "Correct pronunciation",
+
+      "Art of Conversation",
+
+      "Audio sessions for effective listening",
+
+      "Communication in English in day to day situations"
     ]
   },
 
@@ -48,13 +56,17 @@ const courseData = {
     level: "Level 03",
     title: "Advanced English",
     description:
-      "For learners who want to communicate confidently in professional situations, interviews and English tests.",
+      "This course is meant for students who have fair knowledge of grammar and vocabulary but are hesitant and under confident. They may also incorrectly pronounce words.",
     topics: [
-      "Advanced vocabulary",
-      "Professional communication",
-      "Interview communication",
-      "Presentation and discussion skills",
-      "English test preparation"
+      "Advance Grammar for construction & usage of complex sentences",
+      "Advance vocabulary",
+      "Appropriate usage of idiomatic phrases",
+
+      "Improve public speaking skills",
+
+      "Extempore session, group activities & flip overs",
+
+      "Audio-visual aids"
     ]
   }
 };
